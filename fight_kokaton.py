@@ -146,6 +146,12 @@ class Score:
     scoreを表示する
     """
     def __init__(self, score: int):
+        """
+        引数：screen 画面：int
+        フォントの設定
+        スコアの設定
+        フォント表示の位置
+        """
         self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)
         self.score = score
         self.img = self.fonto.render(f"{self,score}", 0, (0, 0, 255))
@@ -153,6 +159,11 @@ class Score:
         self.rct.center = 100, HEIGHT-50
 
     def update(self, screen: pg.Surface):
+        """
+        引数：screen 画面：int
+        フォントの設定
+        screenにブリット
+        """
         self.img = self.fonto.render(f"スコア:{self.score}", 0, (0, 0, 255))
         screen.blit(self.img, self.rct.center)
     
